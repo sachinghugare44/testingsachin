@@ -1,0 +1,38 @@
+/* Form layout */
+.form-container {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .form-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns per row, 4 cols each */
+    gap: 20px;
+  }
+  
+  .form-col {
+    grid-column: span 1; /* Each field will take 4 column spaces out of 12 */
+  }
+  
+  /* Input styles */
+  .custom-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #f1f1f1; /* Set the background color */
+    border-radius: 5px; /* Optional: Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Shadow for better visibility */
+  }
+  
+  .custom-input:focus {
+    outline: none; /* Remove the focus outline */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: Glow effect when focused */
+  }
+  
+  /* Additional styling for labels */
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+  

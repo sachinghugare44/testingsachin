@@ -1,0 +1,103 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+<div class="row">
+  <div class="col-10">
+    <ion-title>Party Management System</ion-title>
+  </div>
+  <div class="col-2" style="text-align: right;">
+    <ion-icon style="font-size: x-large; cursor: pointer;" name="log-out-outline" (click)="logout()"></ion-icon>
+  </div>
+</div>
+
+  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size="11" offset="0.5">
+      <div class="row">
+        <div class="col-8">
+          <h2><b>All Party Details</b></h2>
+        </div>
+        <div class="col-4">
+          <p></p>
+
+          <button class="add" (click)="onclickopendit(0)">Add New Vendor</button>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+        <table class="table table-striped table-bordered dataTable no-footer text-center">
+          <thead style="background-color:#e0e0e0">
+              <tr>
+                  <th>#</th>
+      
+                  <th>Anniversary_date</th>
+                  <th>Birth Date</th>
+                  <th>Email</th>
+                  <th>Mobile Number</th>
+                  <!-- <th>Telphone Number</th>
+                  <th>Whatsapp Number</th> -->
+                  <th>Name</th>
+                  <th>
+                    Company Name
+                  </th>
+                  <th>
+                    Pan Card No.
+                  </th>
+                  <!-- <th>
+                    GST No.
+                  </th>
+                  <th>
+                    Credit Limit
+                  </th>
+                  <th>
+                   Reamrk
+                  </th> -->
+                  <th>
+                    view
+                  </th>
+                  <th>
+                    Action
+                  </th>
+      
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let vehicle of partlist;index as i">
+                  <td>{{i+1}}</td>
+      
+                  <td>{{vehicle.anniversary_date | date : "dd/MM/YYYY"}}
+          
+                  </td>
+                  <td>{{vehicle.date_of_birth | date : "dd/MM/YYYY"}}
+                      
+                  </td>
+                  <td>{{vehicle.email}}</td>
+                  <td>{{vehicle.mobile_no}}</td>
+                  <!-- <td>{{vehicle.telephone_no}}</td>
+      
+                  <td>{{vehicle.whatsapp_no}}</td> -->
+               
+                  <td>{{vehicle.name }}
+                   
+                </td>
+                  <td>{{vehicle.company_name}}</td>
+                  <td>{{vehicle.pan_no}}</td>
+                  <!-- <td>{{vehicle.gstin}}</td>
+                  <td>{{vehicle.credit_limit}}</td>
+                  <td>{{vehicle.remark}}</td> -->
+                  <td><ion-button class="action"  size="small" fill="clear" (click)="onclickopendit(vehicle?.id)" >View/Edit</ion-button></td>
+                  <td><ion-button class="action"  size="small" fill="clear" (click)="deletepartdeyalsbyid(vehicle?.id)" >Delete</ion-button></td>
+      
+              </tr>
+          </tbody>
+      </table>
+      </div></div>
+   
+    </ion-col>
+  </ion-row>
+
+</ion-content>

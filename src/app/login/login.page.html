@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Party Management System</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+<ion-row>
+  <ion-col size="10" offset="1">
+    <!-- <div class="container"  style="border: 0.5px solid black;"> -->
+      <div class="row">
+       
+        <div class="col" >
+<br>
+          <ion-row>
+            <ion-col style="text-align: center;">
+              <label class="label p-1" style="color: rgb(0, 0, 0); font-size:xx-large;"><b>Login</b></label>
+            </ion-col>
+          </ion-row>
+          <p></p>
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+          
+
+
+              <ion-row>
+                <ion-col size="1"></ion-col>
+
+                <ion-col size="10" >
+
+                  <ion-input label="Username" label-placement="floating" formControlName="username" required
+                    style="background-color: white; border-radius: 8px;" fill="outline"   placeholder="Enter Username"
+                    [ngClass]="{ 'is-invalid': submittied && loginFormControl.username.errors }">
+                   </ion-input>
+                    <div *ngIf="submittied && loginFormControl.username.errors " class="invalid-feedback">
+                      <div
+                        *ngIf="loginFormControl.username.errors.required  || loginFormControl.username.touched ">
+                        Enter Username
+                      </div>
+                    </div>
+
+                </ion-col>
+                <ion-col size="1"></ion-col>
+              </ion-row>
+              <hr>
+              <ion-row>
+                <ion-col size="1"></ion-col>
+                <ion-col size="10">
+                  <ion-input label="Password" label-placement="floating" formControlName="password" required
+                    style="background-color: white; border-radius: 8px;" fill="outline"
+                    [ngClass]="{ 'is-invalid': submittied && loginFormControl.password.errors }"
+                    placeholder="Enter Password" type="password"></ion-input>
+                    <div *ngIf="submittied && loginFormControl.password.errors " class="invalid-feedback">
+                      <div
+                        *ngIf="loginFormControl.password.errors.required  || loginFormControl.password.touched ">
+                        Enter Password
+                      </div>
+                    </div>
+
+                    <ion-text *ngIf="logindata==null && submittied && myForm.value.username && myForm.value.password" style="color: red;">Invalid Credentials</ion-text>
+
+                  <br />
+
+
+                </ion-col>
+                <ion-col size="1"></ion-col>
+              </ion-row>
+
+              <ion-row >
+                <ion-col size="1"></ion-col>
+                <ion-col style="text-align: center;" size="10">
+                  <ion-button [disabled]="myForm.invalid" size="small" fill="clear" type="submit"  class="submit">Login</ion-button>
+                </ion-col>
+                <ion-col size="1"></ion-col>
+
+              </ion-row>
+              
+
+            
+          
+        </form>
+        </div>
+      </div>
+      <!-- </div> -->
+
+  </ion-col>
+</ion-row>
+
+
+</ion-content>

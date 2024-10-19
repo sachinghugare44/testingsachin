@@ -1,0 +1,98 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+<div class="row">
+  <div class="col-8">
+    <ion-title>Party Management System</ion-title>
+  </div>
+  <div class="col-3" style="text-align: right;">
+    <ion-icon style="font-size: x-large; cursor: pointer;" name="log-out-outline" (click)="logout()"></ion-icon>
+  </div>
+  <div class="col-1"></div>
+</div>
+
+  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <br> -->
+  <ion-row>
+    <ion-col size="11" offset="0.5">
+      <div class="row">
+        <div class="col">
+          <h2 *ngIf="venddorid>0">Update Vendor Basic Detils </h2>
+          <h2 *ngIf="venddorid==0">Add New Vendor Basic Detils </h2>
+        </div>
+        </div>
+<hr>
+      <form [formGroup]="adddetailsForm" (ngSubmit)="onSubmit()" class="form-container">
+        <div class="form-row">
+          <div class="form-col">
+            <label>Name (optional):</label>
+            <input formControlName="name" type="text" class="custom-input" />
+          </div>
+          <div class="form-col">
+            <label>Company Name:</label>
+            <input formControlName="company_name" type="text" class="custom-input" />
+          </div>
+          <div class="form-col">
+            <label>Mobile No:</label>
+            <input formControlName="mobile_no" type="text" class="custom-input" />
+          </div>
+          <div class="form-col">
+            <label>Telephone No (optional):</label>
+            <input formControlName="telephone_no" type="text" class="custom-input" />
+          </div>
+          <div class="form-col">
+            <label>WhatsApp No (optional):</label>
+            <input formControlName="whatsapp_no" type="text" class="custom-input" />
+          </div>
+          <div class="form-col">
+            <label>Email (optional):</label>
+            <input formControlName="email" type="email" class="custom-input" />
+          </div>
+          <div class="form-col">
+            <label>Remark (optional):</label>
+            <input formControlName="remark" type="text" class="custom-input" />
+          </div>
+          <div class="form-col">
+            <label>Login Access:</label>
+            <input formControlName="login_access" type="checkbox" class="custom-input" />
+          </div>
+          <div class="form-col">
+            <label>Date of Birth (optional):</label>
+            <input formControlName="date_of_birth" type="date" class="custom-input" />
+          </div>
+          <div class="form-col">
+            <label>Anniversary Date (optional):</label>
+            <input formControlName="anniversary_date" type="date" class="custom-input" />
+          </div>
+          <div class="form-col">
+            <label>GSTIN (optional):</label>
+            <input formControlName="gstin" type="text" class="custom-input" />
+          </div>
+          <div class="form-col">
+            <label>PAN No (optional):</label>
+            <input formControlName="pan_no" type="text" class="custom-input" />
+          </div>
+          <div class="form-col">
+            <label>Apply TDS:</label>
+            <input formControlName="apply_tds" type="checkbox" class="custom-input" />
+          </div>
+          <div class="form-col">
+            <label>Credit Limit:</label>
+            <input formControlName="credit_limit" type="number" class="custom-input" />
+          </div>
+        </div>
+      <div class="row text-center ">
+        <div class="col">
+          <button type="submit" style="background-color:orange; width: 25%; height: 50px; border-radius: 6px; font-size: large;" [disabled]="!adddetailsForm.valid">Submit</button>
+
+          </div>
+
+      </div>
+      </form>
+    </ion-col>
+  </ion-row>
+</ion-content>
+

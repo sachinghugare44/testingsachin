@@ -1,0 +1,7 @@
+{
+  "name": "quotecreaterr",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
