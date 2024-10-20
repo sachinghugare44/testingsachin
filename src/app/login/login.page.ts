@@ -57,7 +57,7 @@ export class LoginPage implements OnInit {
         console.log(data)
         if( this.logindata){
 
-        
+        this.myForm.reset();
           this.route.navigate(['/home']);
           localStorage.setItem('Authorization','Token '+this.logindata.token)
           alert('Login Successfully...!')
